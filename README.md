@@ -3,7 +3,7 @@
   <h2>2. 소개 : 쉐보레의 자동차들을 모아 , 리뷰나 평점을 남기고 정보를 공유하는 커뮤니티</h2>
   <h2>3. 와이어 프레임</h2>
     -메인페이지 (최영환님)
-      <img width="80%" src="https://user-images.githubusercontent.com/89297942/156975783-7dd30137-dccd-423b-b7a0-4c0894613385.png"/>
+      <img width="80%" src="https://user-images.githubusercontent.com/98968060/156982094-47421a61-b5fe-44e3-9c5d-c6639dd1bf4e.png"/>
     -로그인 (고승유님)
       <img width="80%" src="https://user-images.githubusercontent.com/89297942/156975776-4c02f8ce-3886-4263-8164-c0a599170a0f.png"/>
     -회원가입 (권지원님)
