@@ -16,5 +16,53 @@ body {
     padding: 0;
     height: 100%;
     display: flex;
-    flex-direction: column;
+}
+
+.wrap {
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    display: flex;
+}
+
+.left_column {
+    margin: 1% 1% 1% 1%;
+    flex-wrap: wrap;
+}
+
+.right_column {
+    margin: 1% 1% 0 1%;
+    flex-wrap: wrap;
+}
+
+.img_banner {
+    position: relative;
+    display: flex;
+    width: 750px;
+    height: 450px;
+    border:solid 1px black;
+}
+
+.desc {
+    margin: 1% 0 1% 0;
+    position: relative;
+    display: flex;
+    border:solid 1px black;
+    width: 750px;
+    height: 310px;
+}
+
+.comment_input {
+    position: relative;
+    display: flex;
+    border:solid 1px black;
+    width: 625px;
+    height: 150px;
+}
+
+.comment_view {
+    margin : 1% 0 1% 0;
+    display: flex;
+    border:solid 1px black;
+    height: 600px;
 }

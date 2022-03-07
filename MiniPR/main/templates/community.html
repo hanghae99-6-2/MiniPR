@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- ajax import -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- css파일의 경로 설정 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='community.css')}}">
+
+    <!-- script 파일의 경로 설정  -->
+    <script src="{{ url_for('static', filename='community.js')}}"></script>
+
+    <!-- google font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
 </head>
 <body>
     <div class = "wrap">
@@ -13,8 +34,8 @@
                 img banner
             </div>
     
-            <div class = "decription">
-                img banner
+            <div class = "desc">
+                desc
             </div>
 
         </div>
@@ -23,13 +44,14 @@
         <div class = "right_column">
        
             <div class = "comment_input">
-                img banner
+                comment in
             </div>
 
-            <div class = "commnet_view">
-                img banner
+            <div class = "comment_view">
+                comment view
             </div>         
         </div>
+
     </div>
 </body>
 </html>
