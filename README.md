@@ -9,7 +9,7 @@
 소개 : 쉐보레의 자동차들을 모아 , 리뷰나 평점을 남기고 정보를 공유하는 커뮤니티
 
 
-메인페이지 (최영환님) :(https://user-images.githubusercontent.com/89297942/156973508-d2013b44-bef9-4ce7-b380-7f1fed71d00e.png)
+메인페이지 (최영환님) :<img src= "https://user-images.githubusercontent.com/89297942/156973508-d2013b44-bef9-4ce7-b380-7f1fed71d00e.png)" >
 
 
 
