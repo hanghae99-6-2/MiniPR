@@ -4,8 +4,8 @@ from flask import Blueprint
 #객체 = Blueprint("name" , __name__ , url_prefix="") : (이름, 모듈명, URL 프리픽스 값)
 #이름은 url_for함수에서 사용되며 , 모듈명은 init.py에서 선언한 모듈을 뜻함 , url_prefix="주소"의 주소에는 브라우져에서 선언될 url을 입력한다 
 
-blueprint = Blueprint("write" , __name__ , url_prefix="/write")
+blueprint = Blueprint("community" , __name__ , url_prefix="/community")
 
 @blueprint.route("/") #<- 데코레이터
 def write_template():
-    return render_template("write.html")
+    return render_template("community.html")
