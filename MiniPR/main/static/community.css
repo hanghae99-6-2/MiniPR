@@ -1,3 +1,6 @@
+/* bluma import */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"; 
+
 html {
     margin: 0;
     padding: 0;
@@ -6,9 +9,103 @@ html {
 header {
     top: 0;
 }
+
 body {
-    width: 100vw;
-    height:100vh;
+    overflow-y: hidden; 
     margin: 0;
-    padding: 0;   
+    padding: 0;
+}
+
+.wrap_flex_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+/* 가로가 min-width 이상일 때의 조건 */
+@media (min-width: 600px) {
+    .column1_container {
+        width: 55vw;
+        height: 97vh;
+        -webkit-order: 1;
+        order: 1;
+        margin:0% 1% 0% 0%;
+    }
+
+    .column2_container {
+        width: 45vw;
+        height: 100vh;
+        -webkit-order: 2;
+        order: 2;
+        margin:0% 0% 0% -1%;
+    }
+}
+
+/* 가로가 max-width 아하일 때의 조건 */
+@media (max-width: 1000px) { 
+    .column1_container {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .column2_container {
+        width: 100vw;
+        height: 50vh;
+    }
+}
+
+
+.column1_container>.img_box {
+    margin: 0 0 0 0;
+    height: 43%;
+    width: 100%;
+
+}
+
+
+.column1_container>.desc {
+    margin: 0 0 0 0;
+    height: 60%;
+    width: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),url(https://t1.daumcdn.net/cfile/tistory/2163FF3C579613890C);
+    background-position: center;
+    background-size: cover;
+}
+.column2_container {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),url(https://t1.daumcdn.net/cfile/tistory/992FAA365C207FEA0E);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.column2_container>.comment_input {
+    margin: 2% auto 1% auto;
+    height: 20%;
+    width: 90%;
+    color:white;    
+}
+.column2_container>.comment_container {
+    margin: 9% auto 1% auto;
+    height: 75%;
+    width: 90%;
+    color:white;    
+    overflow: auto;
+}
+
+.content > p > strong {
+    color:white;
+}
+
+
+.img_box > img {
+    width: 100%;
+    height: 100%;
+}
+
+.desc__form > .desc__name {
+    margin : 0 0 1% 3% ;
+    font-size:44px;
+    color: white;
 }
