@@ -12,7 +12,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 
-    <title>자동차 리뷰 모아보기</title>
+    <title>차좀타볼카</title>
     <style>
         .main1 {
             width: 1000px;
@@ -52,7 +52,88 @@
             margin: auto;
         }
 
+        element.style {
+        }
+
+        .keyvisual-wrap[data-v-8136f914] .el-carousel__unit img {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        img {
+            border-style: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
     </style>
+    <script>
+        $(document).ready(function () {
+        });
+
+        // 캐러셀 조작
+        $('.carousel').carousel({
+            interval: 2000, //시간
+            wrap: true //영구 반복
+        })
+
+        //키워드 클릭 시 카드 띄우기
+        function keyword(data) {
+            $('#cards').empty();
+            $.ajax({
+                // main/type에서 recipe db가져오기
+                type: "GET",
+                url: "/main/type",
+                data: {"type": data},
+                success: function (response) {
+                    let keyword = JSON.parse(response['menu_card']) //dump()로 변환한 문자열을 JSON.parse로 가져오기
+                    for (let i = 0; i < keyword.length; i++) {
+                        let img = keyword[i]['image']
+                        let title = keyword[i]['title']
+                        let id = keyword[i]['_id']['$oid']
+                        let temp_html = `<li class="card-box">
+                                            <a href="/detail?id=${id}">
+                                                <div class="card-image">
+                                                    <img src="${img}" alt="...">
+                                                </div>
+                                                <p class="card-txt" id="tile_name">${title}</p>
+                                            </a>
+                                        </li>`
+                        $('#cards').append(temp_html)
+                    }
+                }
+            })
+        }
+
+        //상단으로 올라가는 아이콘
+        window.addEventListener('scroll', _.throttle(function () { //스크롤 이벤트 rodash이용
+            //console.log(window.scrollY);
+            // _.throttle(함수, 시간)
+            if (window.scrollY > 500) {
+                //버튼 보이기
+                gsap.to('#to-top', .2, { //애니메이션 라이브러리 gsap
+                    x: 0
+                });
+            } else {
+                //버튼 숨기기
+                gsap.to('#to-top', .2, {
+                    x: 100
+                });
+            }
+        }, 300));
+
+        const toTopEl = document.querySelector('#to-top');
+        toTopEl.addEventListener('click', function () {
+            gsap.to(window, .7, {
+                scrollTo: 0
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -69,31 +150,50 @@
 
 <div class="main2">
     <div>
-        <button type="button" class="btn btn-light">전체</button>
-        <button type="button" class="btn btn-light">#세단</button>
-        <button type="button" class="btn btn-light">#해치백</button>
-        <button type="button" class="btn btn-light">#SUV</button>
-        <button type="button" class="btn btn-light">#쿠페</button>
-        <button type="button" class="btn btn-light">#트럭</button>
+        <button onclick="keyword('전체')" type="button" class="btn btn-light" id="all">전체</button>
+        <button onclick="keyword('#세단')" type="button" class="btn btn-light" id="sedan">#세단</button>
+        <button onclick="keyword('#해치백')" type="button" class="btn btn-light" id="hatchback">#해치백</button>
+        <button onclick="keyword('#SUV')" type="button" class="btn btn-light" id="suv">#SUV</button>
+        <button onclick="keyword('#쿠페')" type="button" class="btn btn-light" id="Coupe">#쿠페</button>
+        <button onclick="keyword('#트럭')" type="button" class="btn btn-light" id="truck">#트럭</button>
     </div>
 </div>
+
 <div class="main3">
+
+    <ul id="cards">
+        {% for recipe in recipe_list %}
+            <li class="card-box">
+                <a href="/detail?id={{ recipe._id }}">
+                    <div class="car-image">
+                        <img src="{{ recipe.image }}" alt="...">
+                    </div>
+                    <p class="card-txt">{{ recipe.title }}</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
     <div align="left">
-        <button type="button" class="btn btn-light">Car Name</button>
+        <button type="button" class="btn btn-light" id="name">Car Name</button>
     </div>
     <div align="center" class="carimage">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/spark12_1_1.jpg" class="d-block w-100" alt="...">
+                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/spark12_1_1.jpg"
+                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/colorado4_1_1.jpg" class="d-block w-100" alt="...">
+                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/colorado4_1_1.jpg"
+                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/camaro1_1_1.jpg" class="d-block w-100" alt="...">
+                    <img src="https://www.chevrolet.co.kr/httpobject/images/new_carinfo/masthead/camaro1_1_1.jpg"
+                         class="d-block w-100" alt="...">
                 </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -107,8 +207,9 @@
         </div>
     </div>
     <div align="right">
-        <button type="button" class="btn btn-light">자세히보기</button>
+        <button type="button" class="btn btn-light" id="detail">자세히보기</button>
     </div>
 </div>
+
 </body>
 </html>
