@@ -161,8 +161,8 @@
 
 <div class="main3">
 
-            <ul id="cards">
-            {% for recipe in recipe_list %}
+    <ul id="cards">
+        {% for recipe in recipe_list %}
             <li class="card-box">
                 <a href="/detail?id={{ recipe._id }}">
                     <div class="car-image">
@@ -171,8 +171,8 @@
                     <p class="card-txt">{{ recipe.title }}</p>
                 </a>
             </li>
-            {% endfor %}
-        </ul>
+        {% endfor %}
+    </ul>
 
     <div align="left">
         <button type="button" class="btn btn-light" id="name">Car Name</button>
