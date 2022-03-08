@@ -8,71 +8,7 @@ header {
 }
 body {
     width: 100vw;
+    height:100vh;
     margin: 0;
     padding: 0;   
 }
-/* column drop layout 구성 */
-.container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-  }
-  
-  @media (min-width: 600px) {
-    .img_box .desc .comment_input .comment_container {
-        width: 100%;
-    }
-    .img_box {
-        width: 60%;
-        -webkit-order : 2;
-        order : 2;
-    }
-    .desc{
-        width:40%;
-        -webkit-order : 1;
-        order : 1;
-        
-    }
-    .comment_input{
-        width: 100%;
-        -webkit-order : 3;
-        order : 3;
-    }
-    .comment_view {
-        width: 100%;
-        -webkit-order : 4;
-        order : 4;
-    }
-  }
-  
-  @media (min-width: 800px) {
-    .comment_input, .comment_container {
-      width: 33%;
-    }
-  }
-  
-  /* @media (min-width: 800px) {
-    .container {
-      width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    } */
-  }
-
-    .img_box {
-        background-color: blue;
-        width:100%;
-    }
-
-    .desc {
-        background-color: green;
-    }
-
-    .comment_input {
-        background-color: black;
-    }
-
-    .comment_container {
-        background-color: red;
-    }
