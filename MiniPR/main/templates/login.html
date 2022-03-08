@@ -1,12 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    login page test
-</body>
+    <head>
+        <!-- Webpage Title -->
+        <title>login | 차좀타볼카 </title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bulma CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <!-- Font Awesome CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+        <style>
+            * {
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            .signin {
+                height: 100vh;
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cphoto.asiae.co.kr/listimglink/9/2022030713315569250_1646627515.jpg");
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .logogo {
+                color : navajowhite;
+                margin-bottom: 20px;
+            }
+
+            .main_logo img {
+                width: 110px;
+            }
+
+            .signin h1 {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .signin__card {
+                width: 450px;
+                margin: auto;
+                border-radius: 20px;
+                background-color: gray;
+                padding-bottom: 20px;
+                box-shadow: 15px 15px 24px rgba(0, 0, 0, 0.4);
+
+            }
+
+            .signin__card h1 {
+                padding: 30px;
+                padding-bottom: 15px;
+                text-align: center;
+            }
+
+            .signin__card form {
+                padding: 20px 30px;
+            }
+
+            .signin__card form input {
+                width: 100%;
+                margin: 8px auto 8px auto;
+                padding: 15px;
+                border: 0.5px solid black;
+                border-radius: 10px;
+                outline: none;
+                box-sizing: border-box;
+                font-size: 15px;
+            }
+
+            #ID_Input {
+                margin-bottom: 30px;
+            }
+
+            #passWord_Input {
+                margin-bottom: 20px;
+            }
+
+            .login__join {
+                margin-top: 10px;
+            }
+
+            .signin__card form .login__join {
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            .signin__card form [type="submit"] {
+                width: 180px;
+                background-color: #467FC8;
+                border: none;
+                color: #fff;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .signin__card form #Sign_up_button {
+                background-color: #5C46C8;
+            }
+
+        </style>
+
+        <script>
+            // {% if msg %}
+            //     alert("{{ msg }}")
+            // {% endif %}
+            function sign_in() {
+                let username = $("#input-username").val()
+                let password = $("#input-password").val()
+
+                if (username == "") {
+                    $("#help-id-login").text("아이디를 입력해주세요.")
+                    $("#input-username").focus()
+                    return;
+                } else {
+                    $("#help-id-login").text("")
+                }
+
+                if (password == "") {
+                    $("#help-password-login").text("비밀번호를 입력해주세요.")
+                    $("#input-password").focus()
+                    return;
+                } else {
+                    $("#help-password-login").text("")
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/sign_in",
+                    data: {
+                        username_give: username,
+                        password_give: password
+                    },
+                    success: function (response) {
+                        if (response['result'] == 'success') {
+                            $.cookie('mytoken', response['token'], {path: '/'});
+                            window.location.replace("/")
+                        } else {
+                            alert(response['msg'])
+                        }
+                    }
+                });
+            }
+        </script>
+
+    </head>
+    <body>
+    <section class="signin">
+        <div class="row">
+            <div class="logo_login">
+                <div class="logogo">
+                    <h1>차 좀 타볼카?</h1>
+                </div>
+                <div class="signin__card">
+                    <form id="register_Form">
+                        <span>아이디</span>
+                        <input id="ID_Input" type="id" placeholder="아이디를 입력하세요." autocomplete="off" required>
+                        <span>비밀번호</span>
+                        <input id="passWord_Input" type="password" placeholder="비밀번호를 입력하세요." autocomplete="off"
+                               required>
+                        <div class="login__join">
+                            <input id="Login_button" type="submit" value="로그인">
+                            <input id="Sign_up_button" type="submit" value="회원가입">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
 </html>
