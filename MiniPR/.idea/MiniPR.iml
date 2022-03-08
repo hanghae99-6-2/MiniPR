@@ -13,6 +13,11 @@
   </component>
 =======
     <content url="file://$MODULE_DIR$" />
+<<<<<<< HEAD
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+=======
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
@@ -20,7 +25,11 @@
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />
   </component>
+<<<<<<< HEAD
+>>>>>>> 314120f6dd4adfae9dadc8e51b0d267a806444f3
+=======
 >>>>>>> fdf5f44bcf793532bc9d2c62812c3ff590af49bd
+>>>>>>> 573e7821b9b4dba32ae5e2141de10702d7ddbaba
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">

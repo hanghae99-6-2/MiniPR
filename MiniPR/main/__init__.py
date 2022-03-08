@@ -1,11 +1,16 @@
-from flask import Flask , render_template , request , jsonify , session 
+from flask import Flask , render_template , request , jsonify , session, redirect, url_for
 from pymongo import MongoClient
 import certifi
+# 회원가입/로그인
+import jwt
+import hashlib
 
 #db 연결
 ca = certifi.where()
 client = MongoClient('mongodb+srv://notflix:1514@cluster0.jtaa3.mongodb.net/Cluster0?retryWrites=true&w=majority',tlsCAFile=ca)
 db = client.notflix
+
+SECRET_KEY = 'SPARTA'
 
 #__init__.py 파일에선 app 객체를 선언하고 각종 모듈, 데이터베이스, 블루프린트 등 값을 설정한다
 
