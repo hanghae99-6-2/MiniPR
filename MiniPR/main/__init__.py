@@ -17,7 +17,7 @@ SECRET_KEY = 'SPARTA'
 from . import main       #from . import main : main.py의 내용을 호출하겠다.
 from . import login    
 from . import sign_up   
-from . import write 
+from . import community 
 
 
 app = Flask(__name__)
@@ -25,5 +25,5 @@ app = Flask(__name__)
 app.register_blueprint(main.blueprint) # (main.blueprint) main.py에서 사용할 blueprint객체를 blueprint로 설정할거야
 app.register_blueprint(login.blueprint) 
 app.register_blueprint(sign_up.blueprint)
-app.register_blueprint(write.blueprint)
+app.register_blueprint(community.blueprint)
 
