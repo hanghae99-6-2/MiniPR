@@ -10,8 +10,6 @@ import hashlib
 
 blueprint = Blueprint("login" , __name__ , url_prefix="/login")
 
-SECRET_KEY = 'CAR'
-
 
 @blueprint.route("/") #<- 데코레이터
 def login_template():
