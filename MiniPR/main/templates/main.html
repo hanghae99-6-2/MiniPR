@@ -110,29 +110,45 @@
             })
         }
 
-        //상단으로 올라가는 아이콘
-        window.addEventListener('scroll', _.throttle(function () { //스크롤 이벤트 rodash이용
-            //console.log(window.scrollY);
-            // _.throttle(함수, 시간)
-            if (window.scrollY > 500) {
-                //버튼 보이기
-                gsap.to('#to-top', .2, { //애니메이션 라이브러리 gsap
-                    x: 0
-                });
-            } else {
-                //버튼 숨기기
-                gsap.to('#to-top', .2, {
-                    x: 100
-                });
-            }
-        }, 300));
-
         const toTopEl = document.querySelector('#to-top');
         toTopEl.addEventListener('click', function () {
             gsap.to(window, .7, {
                 scrollTo: 0
             });
         });
+
+        response["cars"][seadan][0]
+        let rows = response1let
+        index = rows["index"]
+        let carname = rows["carname"]
+        let url = rows["이미지"]
+        num = db.list.find.legth() + 1
+
+.cars {
+    {sedan : [
+                    {index : num , carname : '2022 쉐보레 말리부' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20200317_149%2Fauto_158441215563534vJP_PNG%2F20200317112906_KlEldE82.png'} ,
+            ]},
+
+    {hatchback : [
+                    {index : num, carname : '2022 쉐보레 볼트 EV', image : 'https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210811_95%2Fauto_1628645625080eafi7_PNG%2F20210811103322_kc5Q7fW3.png'},
+                    {index : num, carname : '2022 쉐보레 스파크', image : 'https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210730_48%2Fauto_16276141785543E5Sz_PNG%2F20210730120243_imLcTkGD.png'}
+                ]},
+
+    {suv : [
+                {index : num , carname : '2022 쉐보레 트래버스' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20200317_149%2Fauto_158441215563534vJP_PNG%2F20200317112906_KlEldE82.png'} ,
+                {index : num , carname : '2022 쉐보레 볼트 EUV' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210811_188%2Fauto_1628646523272EVtVT_PNG%2F20210811104832_sEcRInMr.png'} ,
+                {index : num , carname : '2022 쉐보레 트랙스' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210118_103%2Fauto_1610958494862sN41i_PNG%2F20210118172759_OfNcQMKz.png'} ,
+                {index : num , carname : '2022 쉐보레 트레일블레이저' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20201221_10%2Fauto_1608521041592E4DT8_PNG%2F20201221122342_sIHByu3s.png'}
+          ]},
+
+    {truck: [
+                {index : num , carname : '2022 쉐보레 콜로라도' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20211206_48%2Fauto_1638770256656QvULO_PNG%2F20211206145727_kcRlMkpK.png'} ,
+           ]},
+
+    {coupe: [
+                {index : num , carname : '2021 쉐보레 카마로' , image : 'https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20201026_28%2Fauto_1603678707125ddP3Y_PNG%2F20201026111817_QpzGDbPw.png'} ,
+           ]},
+    }
     </script>
 
 </head>
@@ -145,7 +161,8 @@
         <img src="https://www.chevrolet.co.kr/httpobject/images/campaign/2022-newstart-raq/index/index_h1.jpg"
              width=740px>
     </div>
-</div>
+</div><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 <div class="main2">
@@ -175,7 +192,7 @@
     </ul>
 
     <div align="left">
-        <button type="button" class="btn btn-light" id="name">Car Name</button>
+        <button onclick={{ url_for('/malibu') }} , window.location,localstorage.get(index)>자동차이름</button>
     </div>
     <div align="center" class="carimage">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -207,7 +224,7 @@
         </div>
     </div>
     <div align="right">
-        <button type="button" class="btn btn-light" id="detail">자세히보기</button>
+        <button onclick={{ url_for('/malibu') }} , window.location,localstorage.get(index)>자세히보기</button>
     </div>
 </div>
 
