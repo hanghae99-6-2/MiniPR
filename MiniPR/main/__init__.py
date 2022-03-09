@@ -11,7 +11,6 @@ import json
 #db 파일 불러오기
 with open('main/config.json', 'r') as f:
     config = json.load(f)
-
 secret_ID = config['DEFAULT']['ADMIN_NAME']
 secret_key = config['DEFAULT']['SECRET_KEY']
 

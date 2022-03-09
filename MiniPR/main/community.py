@@ -20,44 +20,48 @@ def write_template():
 
     return render_template("community.html" , community = community , comment = comment)
 
-@blueprint.route("/community" , methods = ["POST"])
-def comment_post():
+# @blueprint.route("/community" , methods = ["POST" , 'GET'])
+# def comment_post():
+#    if request.method == 'POST':
+#       result = request.form
+#       return render_template("result.html",result = result)
+ 
 
-#     #1. GET : DB에서 Data를 찾아 Client에서 호출할 수 있게 return값을 할당
-# 2. POST : Client에서 Data를 받아 DB에 저장
-# - Client
-#     1. GET : Server에서 Data를 받아 posting
-#     2. POST : 사용자의 Input값을 data형식 지정 후 Server에 전송
-    if request.method == 'POST':
+# #     #1. GET : DB에서 Data를 찾아 Client에서 호출할 수 있게 return값을 할당
+# # 2. POST : Client에서 Data를 받아 DB에 저장
+# # - Client
+# #     1. GET : Server에서 Data를 받아 posting
+# #     2. POST : 사용자의 Input값을 data형식 지정 후 Server에 전송
+#     if request.method == 'POST':
     
-        result = request.form
-        return render_template("result.html",result = result)
+#         result = request.form
+#         return render_template("result.html",result = result)
     
-    day = datetime.datetime.now()  
-    user_index = 1 #로그인에서 넘겨준 유저의 인덱스 번호를 넘겨줄 것
-    email = "plo@naver.com" #로그인에서 넘겨준 유저의 이메일을 넘겨줄 것
-    now = day.strftime('%Y-%m-%d')
-    comment = input #클라이언트에서 받은 유저의 input을 받아올 것
+#     day = datetime.datetime.now()  
+#     user_index = 1 #로그인에서 넘겨준 유저의 인덱스 번호를 넘겨줄 것
+#     email = "plo@naver.com" #로그인에서 넘겨준 유저의 이메일을 넘겨줄 것
+#     now = day.strftime('%Y-%m-%d')
+#     comment = input #클라이언트에서 받은 유저의 input을 받아올 것
 
-    doc_comment = {'comment': {
-        "user_name" : user_index ,
-        "email" : email , 
-        "now" : now ,
-        "comment" : input
-        }}
-    db.comment.insert_one(doc_comment)
-    return ({"msg" : "댓글 저장 완료!"})
+#     doc_comment = {'comment': {
+#         "user_name" : user_index ,
+#         "email" : email , 
+#         "now" : now ,
+#         "comment" : input
+#         }}
+#     db.comment.insert_one(doc_comment)
+#     return ({"msg" : "댓글 저장 완료!"})
 
-def db_post():
-    desc1 = "파워트레인/성능 E-Turbo 1.35 직분사 가솔린 엔진, VT40 무단 변속기, Stop & Start 시스템(ON/OFF 버튼 포함), 액티브 에어로 셔터, 속도 감응형 전자식 파워 스티어링(R-EPS)"
-    desc2 = "외관 사양 알로이 휠, 프로젝션 헤드램프, 어쿠스틱 윈드실드 글래스(차음/자외선 차단), 자외선 차단 유리(전체), 크리스탈 LED 주간주행등, LED 보조제동등, LED 테일 램프, LED 방향지시등 일체형 아웃사이드 미러(전동조절/열선내장/전동접이식), 크롬 도어핸들"
+# def db_post():
+#     desc1 = "파워트레인/성능 E-Turbo 1.35 직분사 가솔린 엔진, VT40 무단 변속기, Stop & Start 시스템(ON/OFF 버튼 포함), 액티브 에어로 셔터, 속도 감응형 전자식 파워 스티어링(R-EPS)"
+#     desc2 = "외관 사양 알로이 휠, 프로젝션 헤드램프, 어쿠스틱 윈드실드 글래스(차음/자외선 차단), 자외선 차단 유리(전체), 크리스탈 LED 주간주행등, LED 보조제동등, LED 테일 램프, LED 방향지시등 일체형 아웃사이드 미러(전동조절/열선내장/전동접이식), 크롬 도어핸들"
         
-    #key안에 li 안에 key안에 val
-    doc = {'community': {
-        "desc1" : desc1 ,
-        "desc2" : desc2 ,
-        }}
-    db.community.insert_one(doc)
+#     #key안에 li 안에 key안에 val
+#     doc = {'community': {
+#         "desc1" : desc1 ,
+#         "desc2" : desc2 ,
+#         }}
+#     db.community.insert_one(doc)
 
 
-db_post()
+# db_post()
