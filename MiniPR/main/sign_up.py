@@ -10,7 +10,7 @@ blueprint = Blueprint("sign_up" , __name__ , url_prefix="/sign_up")
 def sign_up_template():
     return render_template("sign_up.html")
 
-@app.route('/save', methods=['POST'])
+@blueprint.route('/save', methods=['POST'])
 def sign_up():
     username_receive = request.form['username_give']                                        # 유저 이름을 받고
     password_receive = request.form['password_give']                                        # 패스워드를 받고
@@ -24,7 +24,7 @@ def sign_up():
     return jsonify({'result': 'success'})
 
 
-@app.route('/check_dup', methods=['POST'])
+@blueprint.route('/check_dup', methods=['POST'])
 def check_dup():
     # 아이디 중복 확인
     username_receive = request.form['username_give']
