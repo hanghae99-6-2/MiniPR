@@ -31,5 +31,3 @@ def check_dup():
     exists = bool(db.users.find_one({"username": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})
 
-if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
