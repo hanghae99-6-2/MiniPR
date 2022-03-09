@@ -1,7 +1,8 @@
-
-from flask import Flask , render_template , request , jsonify , session, redirect, url_for
+from flask import Flask , render_template , request , jsonify , session, redirect, url_for 
 from pymongo import MongoClient
 import certifi
+import requests
+from bs4 import BeautifulSoup
 # 회원가입/로그인
 import jwt
 import hashlib

@@ -47,8 +47,9 @@
 
             <div class="desc">
                 <div class="desc__form">
-                    <div class="desc__name">말리부</div>
-                    <div class="desc__meca">자동차 제원 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명자동차 설명</div>
+                    <div class="desc__name">{{community['name']}}</div>
+                    <div class="desc__meca">{{community['desc1']}}</div>
+                    <div class="desc__meca">{{community['desc2']}}</div>
                 </div>
             </div>
         </div>
@@ -81,11 +82,9 @@
                     <div class="media-content">
                         <div class="content">
                             <p>
-                                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                                <strong>{{comment['user_name']}}</strong> <small>{{comment['email']}}</small> <small>{{comment['now']}}</small>
                                 <br>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
-                                pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
-                                feugiat facilisis.
+                                {{comment['comment']}}
                             </p>
                         </div>
                         <nav class="level is-mobile">
@@ -111,7 +110,7 @@
                     <div class="media-content">
                         <div class="content">
                             <p>
-                                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                                <strong></strong> <small>@johnsmith</small> <small>31m</small>
                                 <br>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
                                 pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
