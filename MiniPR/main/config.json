@@ -1,0 +1,7 @@
+{
+    "DEFAULT": {
+      "SECRET_KEY": "test",
+      "ADMIN_NAME": "test"
+    }
+}
+
