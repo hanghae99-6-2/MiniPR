@@ -1,0 +1,21 @@
+body {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cphoto.asiae.co.kr/listimglink/9/2022030713315569250_1646627515.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button.is-sparta {
+    background-color: royalblue;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.button.is-sparta.is-outlined {
+    background-color: transparent;
+    border-color: royalblue;
+    color: royalblue !important;
+}
+
+.help {
+    color: gray;
+}

@@ -18,7 +18,7 @@ def sign_up():
     doc = {
         "username": username_receive,                               # 아이디
         "password": password_hash,                                  # 비밀번호
-        "profile_name": username_receive,                           # 프로필 이름 기본값은 아이디
+        "profile_name": username_receive                           # 프로필 이름 기본값은 아이디
     }
     db.users.insert_one(doc)
     return jsonify({'result': 'success'})
@@ -30,6 +30,3 @@ def check_dup():
     username_receive = request.form['username_give']
     exists = bool(db.users.find_one({"username": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})
-
-if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
