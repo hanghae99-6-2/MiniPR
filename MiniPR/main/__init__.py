@@ -7,7 +7,7 @@ import hashlib
 
 #db 연결
 ca = certifi.where()
-client = MongoClient('mongodb+srv://notflix:1514@cluster0.jtaa3.mongodb.net/Cluster0?retryWrites=true&w=majority',tlsCAFile=ca)
+client = MongoClient('mongodb://52.78.200.110', 27017, username="test", password="test")
 db = client.notflix
 
 SECRET_KEY = 'SPARTA'
