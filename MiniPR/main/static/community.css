@@ -16,6 +16,65 @@ body {
     padding: 0;
 }
 
+.nav__logo {
+    font-size: 40px;
+  }
+  .nav__logo_a {
+    padding: 0;
+    margin : 0;
+    display: block;
+    width: 120px;
+    height: 60px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),url(https://cdn.motor1.com/images/mgl/W0vnr/s3/purported-mid-engined-corvette-c8-official-logo.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    z-index: 3;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+    background-color:black;
+    justify-content: space-between;
+  }
+  .primary-navigation-login {
+    display: inline-block;
+  }
+
+  ul li {
+    float: right; 
+  }
+
+  .navigation-login_a {
+    display: block;
+    color: white;
+    text-align: center;
+    width: 120px;
+    height:60px;
+    padding-top: 12.5%;
+    font-size: 20px;
+  }
+  .navigation-login_a:hover {
+    color: white;
+    font: bold;
+  }
+  .navigation-join_a {
+    text-align: center;
+    display: block;
+    color: white;
+    width: 120px;
+    height:60px;
+    padding-top: 12.5%;
+    font-size: 20px;
+  }
+  .navigation-join_a:hover {
+    color: white;
+    font: bold;
+  }
+
 .wrap_flex_container {
     width: 100vw;
     height: 100vh;

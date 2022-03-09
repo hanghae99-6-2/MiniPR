@@ -4,4 +4,9 @@ from main import app
 # host(모든 public ip의 접근 가능) 및 port번호 , debug=True(어플리케이션 실행시 파라미터로 넘겨주겠다)를 선언한다. (마지막 코드라인)
 
 if __name__ == '__main__':  # 우리가 실행하는 서버(port = 5000)이 유일한 서버입니다.
+<<<<<<< HEAD
     app.run(host='0.0.0.0', port=5001, debug=True)
+
+=======
+    app.run(host='0.0.0.0', port=5001, debug=True)
+>>>>>>> 37a6a6a96463f65db6dac49fd988c641eb26d699
