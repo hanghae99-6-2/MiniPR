@@ -15,7 +15,7 @@ def community_template():
 
     return render_template("community.html" , car = cars)
         
-@blueprint.route("/comment_post" , methods = ["POST"])
+@blueprint.route("/comment_post" , methods = ["GET" "POST"])
 def comment_post():
         SECRET_KEY = 'CAR'
         token_receive = request.cookies.get('token') #쿠키에서 토큰을 받아올 것
@@ -23,6 +23,7 @@ def comment_post():
         
         user_info = db.users.find_one({"username": payload["id"]}) #페이로드와 동일한 데이터
          
+        index_receive = request.form['index_give']
         comment_receive = request.form['comment_give']#클라이언트에서 받은 유저의 input을 받아올 것
         day = datetime.datetime.now()  #데이터가 들어가는 실시간 시간 저장
         now = day.strftime('%Y-%m-%d')
@@ -43,9 +44,7 @@ def comment_post():
 
 @blueprint.route("/post_card" , methods = ["POST"])
 def post_card():
-    # carname = list(db.cars.find({"carname" :db_index},{'_id':False}))
-    index = request.form['index_give']#클라이언트에서 받은 유저의 input을 받아올 것
-    data = list(db.cars.find({'carname' : index},{'_id':False}))
+    data = list(db.cars.find({},{'_id':False}))
     
     return jsonify({'card': data})
     

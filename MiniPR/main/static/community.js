@@ -9,9 +9,10 @@ function comment_container(){
 
 function index_post() {
     index = $('#db_index').text();
+    
     $.ajax({
         type: "POST",
-        url: "/community/post",
+        url: "/community/comment_post",
         data: {index_give : index},
         success: function (response) {
         }
@@ -33,11 +34,11 @@ function comment_post() {
 }
 
 function data_post(){
-    index = $('#db_index')
+
     $.ajax({
             type: "GET" ,
             url: "/community/post",
-            data: {db_index : index},
+            data: {},
             success: function(response) {
                 let temp_html =``
 
